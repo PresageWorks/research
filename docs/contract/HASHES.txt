@@ -1,0 +1,36 @@
+PRESAGE research record — cryptographic hashes
+====================================================
+
+RATIFIED CONTRACT DOCUMENTS (private, unredacted)
+----------------------------------------------------
+Digests computed at ratification, over the complete unredacted documents,
+before any evaluation data existed. These identify the ratified originals.
+They do not expose their contents. The originals are retained privately and
+unmodified; an authorised auditor given a copy can confirm it hashes to the
+value below, and can then check the full feature table against any report.
+
+  v2  sha256 937ce309d5c01f1f135a63dffa60507f3a4d9606cdffc9afdda32aa9411b4161
+      bytes 40343   ratified 2026-08-24, amended 2026-08-26
+  v1  sha256 505b12d0999665230127fcc630aeabe40a83aefdb78f07359a1ecd176c291869
+      bytes 31178   ratified 2026-08-24
+
+PUBLIC REDACTED EDITIONS (the files in this directory)
+----------------------------------------------------
+Derived from the ratified originals by withholding individual feature names
+and per-family counts. These editions do NOT carry the ratified digests and
+must not be presented as if they do — a redacted file is a different file.
+See REDACTION_NOTE.md.
+
+  EVALUATION_CONTRACT.public.md
+      sha256 a763abd10ce50b703c1e8bf915851a094d22744b4904c93cf5ffcde4272b1063
+      bytes  40747
+  EVALUATION_CONTRACT.v1.public.md
+      sha256 d900a1a90d70d1aee8d18485f2986b6e8493dff0ea9e6d8b7a56dc01ac1a682c
+      bytes  31575
+
+REPRODUCING THESE DIGESTS
+----------------------------------------------------
+Digests are over the exact bytes of the files as committed. The
+repository sets `* -text` in .gitattributes, disabling end-of-line
+conversion, so a clone on any platform yields the same bytes and the
+same digests. Verify with:  sha256sum <file>

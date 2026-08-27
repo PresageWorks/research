@@ -1,0 +1,5 @@
+# Minimal GitHub Pages configuration. Functional only -- no theme selection,
+# branding or styling. Pages renders docs/*.md natively from this.
+title: PRESAGE — public research record
+description: Public research and methodology record. Methodology and verification are public; implementation is not.
+markdown: kramdown
