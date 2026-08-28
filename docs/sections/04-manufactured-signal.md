@@ -35,7 +35,7 @@ three-decimal figure is in the comparison table of the three-day report).
 My events clustered in the morning. My controls did not.
 
 So I recomputed it with a rolling 24-hour lookback. That change also required
-moving from one day to three, which — as §5 explains — was what finally made
+moving from one day to three, which, as §5 explains, was what finally made
 properly hour-matched controls possible. Two things improved at once: the
 wallet definition, and the comparison it was being tested against. Their
 contributions cannot be separated from what was run, and I am not going to
@@ -79,8 +79,8 @@ effect is approximately zero in both directions.
 The obvious objection is that the second test simply had different data and got
 unlucky. It does not hold, and this is exactly the case where quoting power
 matters. At 57 events against 744 controls the design had complete power to
-detect d = 0.8 — both at p < 0.05 and at the stricter alpha BH effectively
-imposes on a mid-ranked test — and that is well below the 1.85 I was chasing.
+detect d = 0.8, both at p < 0.05 and at the stricter alpha BH effectively
+imposes on a mid-ranked test. That is well below the 1.85 I was chasing.
 **If the original effect had been real at anything near the size claimed, it
 could not have hidden from the second test.**
 

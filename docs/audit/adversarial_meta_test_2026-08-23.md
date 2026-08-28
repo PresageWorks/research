@@ -98,7 +98,7 @@ Earliest bin `[-30,-25)`, the one the whole study is about:
 
 **This number belongs beside every null result the system produces.** A
 "nothing found" from this pipeline at the current event count means "no effect
-of d ≳ 2 was present" — it says almost nothing about d = 0.3–1.0.
+of d ≳ 2 was present". It says almost nothing about d = 0.3–1.0.
 
 The negative control behaves: planting nothing is detected 5% of the time at
 the earliest bin's 0% and the late bin's 5%, i.e. α. The suite is quiet when

@@ -38,7 +38,7 @@ the derived window-variable table by counting distinct populated hours among
 the 744 control windows, and it is reported as a derivation rather than as a
 quotation. It is the same scarcity that forced the matching tolerance open,
 measured on the corrected three-day run rather than on the one-day run where the
-problem was first noticed — which means the constraint did not go away when the
+problem was first noticed. The constraint did not go away when the
 matching improved. It got survivable.
 
 This is why an unmatched control is not merely a noisy one. Noise across 57
@@ -81,7 +81,7 @@ placebo test that was supposed to validate everything could only be constructed
 from 5 of 13 events, because for events at hours 6, 7, 8, 9 and 22 every
 eligible minute was already within 30 minutes of an event. A guard running on
 5 events is close to no guard at all. On three days it retains 48 of 57 and
-becomes a real test — which is the same underlying scarcity problem as the
+becomes a real test. This is the same underlying scarcity problem as the
 control matching, showing up in the validation layer instead of the design
 layer. Section 7 is about what happens when that goes unnoticed.
 

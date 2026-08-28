@@ -4,9 +4,9 @@ The claim that order flow carries information about price is old, well
 supported, and was posed from the beginning as a question about *timing*. Kyle
 (1985) opens by asking "how quickly is new private information about the
 underlying value of a speculative commodity incorporated into market prices?"
-In his model an informed trader conceals himself inside uninformed volume —
+In his model an informed trader conceals himself inside uninformed volume;
 noise traders "provide camouflage which enables the insider to make profits at
-their expense" — and so trades gradually rather than all at once. The result is
+their expense", so he trades gradually rather than all at once. The result is
 about timing: "The informed trader trades in such a way that his private
 information is incorporated into prices gradually," at a constant rate in the
 continuous limit, with all of it in price by the end of trading. Glosten and
@@ -28,16 +28,17 @@ move as it happens is not the same as seeing it coming, and the second is what
 this project asks about.
 
 The prior work closest to that question is VPIN. Easley, López de Prado and
-O'Hara (2012) state that "VPIN predicts short-term toxicity-induced volatility,
-particularly as it relates to large price moves" — our question, on another
-venue. It is also contested. Andersen and Bondarenko (2014) argue the metric is
-"by construction, highly correlated with recent innovations to trading volume
-and return volatility," and that once current volume and volatility are
-controlled for there is "no evidence of incremental predictive power of VPIN
-for future volatility." Easley and co-authors replied, disputing this; the
-exchange is unresolved. What matters here is that the dispute is about
-**controls**, not about effect size — which is why sections 5 and 7 of this
-note are about controls rather than about how large anything was.
+O'Hara (2012) state that "VPIN predicts short-term toxicity-induced
+volatility, particularly as it relates to large price moves". That is our
+question, on another venue. It is also contested. Andersen and Bondarenko
+(2014) argue the metric is "by construction, highly correlated with recent
+innovations to trading volume and return volatility," and that once current
+volume and volatility are controlled for there is "no evidence of incremental
+predictive power of VPIN for future volatility." Easley and co-authors
+replied, disputing this; the exchange is unresolved. What matters here is that
+the dispute is about **controls**, not about effect size. That is why sections
+5 and 7 of this note are about controls rather than about how large anything
+was.
 
 Three things differ in what follows. **The venue:** Hyperliquid trades
 perpetual futures, the most popular cryptocurrency derivative (He et al. 2024),

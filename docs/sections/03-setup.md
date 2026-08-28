@@ -76,13 +76,13 @@ three-day run uses **744** such controls.
 
 Each of these is present for a specific reason.
 
-**Benjamini-Hochberg correction.** The study runs 120 tests — 20 variables
-across 6 lead bins — so roughly 6 will clear p < 0.05 by chance alone. BH
+**Benjamini-Hochberg correction.** The study runs 120 tests (20 variables
+across 6 lead bins), so roughly 6 will clear p < 0.05 by chance alone. BH
 adjusts the threshold for how many tests were run, and is reported as q. It is
 worth being clear about what BH does *not* do: it controls false discoveries
 arising from noise. It does nothing whatever about a confound that shifts many
 variables in the same direction at once. Section 5 is a case where 63 of 120
-tests survived BH and the correction was working perfectly — it was answering a
+tests survived BH and the correction was working perfectly: it was answering a
 question about noise, and the problem was not noise.
 
 **Placebo events.** The entire analysis re-run against deliberately fake events

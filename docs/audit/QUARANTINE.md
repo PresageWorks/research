@@ -85,8 +85,8 @@ Confirmatory claims from this dataset are prohibited outright.
 ## Enforcement
 
 `paper/build.py --check` fails the build if a confirmatory claim in the research
-note cites a quarantined artifact. The check is deliberately crude — it pairs
-confirmatory vocabulary with quarantined filenames in the same sentence — and it
+note cites a quarantined artifact. The check is deliberately crude: it pairs
+confirmatory vocabulary with quarantined filenames in the same sentence. It
 is a tripwire, not a proof. It cannot catch a confirmatory claim phrased
 carefully enough to evade it. The rule is the control; the check is a reminder.
 

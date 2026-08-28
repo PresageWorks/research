@@ -100,7 +100,7 @@ someone may eventually pay for this, and a claim sold on an underpowered result
 is the seller's fault, not the buyer's.
 
 The hash proves the contract was not edited after the fact. It does not prove
-the eventual run honoured it — that depends on the run manifest citing the
+the eventual run honoured it; that depends on the run manifest citing the
 digest and on the report emitting every pre-declared item unconditionally. The
 scheme is tamper-evident, not tamper-proof, and the contract says so in those
 words.

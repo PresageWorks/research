@@ -64,9 +64,9 @@ The claim that order flow carries information about price is old, well
 supported, and was posed from the beginning as a question about *timing*. Kyle
 (1985) opens by asking "how quickly is new private information about the
 underlying value of a speculative commodity incorporated into market prices?"
-In his model an informed trader conceals himself inside uninformed volume —
+In his model an informed trader conceals himself inside uninformed volume;
 noise traders "provide camouflage which enables the insider to make profits at
-their expense" — and so trades gradually rather than all at once. The result is
+their expense", so he trades gradually rather than all at once. The result is
 about timing: "The informed trader trades in such a way that his private
 information is incorporated into prices gradually," at a constant rate in the
 continuous limit, with all of it in price by the end of trading. Glosten and
@@ -88,16 +88,17 @@ move as it happens is not the same as seeing it coming, and the second is what
 this project asks about.
 
 The prior work closest to that question is VPIN. Easley, López de Prado and
-O'Hara (2012) state that "VPIN predicts short-term toxicity-induced volatility,
-particularly as it relates to large price moves" — our question, on another
-venue. It is also contested. Andersen and Bondarenko (2014) argue the metric is
-"by construction, highly correlated with recent innovations to trading volume
-and return volatility," and that once current volume and volatility are
-controlled for there is "no evidence of incremental predictive power of VPIN
-for future volatility." Easley and co-authors replied, disputing this; the
-exchange is unresolved. What matters here is that the dispute is about
-**controls**, not about effect size — which is why sections 5 and 7 of this
-note are about controls rather than about how large anything was.
+O'Hara (2012) state that "VPIN predicts short-term toxicity-induced
+volatility, particularly as it relates to large price moves". That is our
+question, on another venue. It is also contested. Andersen and Bondarenko
+(2014) argue the metric is "by construction, highly correlated with recent
+innovations to trading volume and return volatility," and that once current
+volume and volatility are controlled for there is "no evidence of incremental
+predictive power of VPIN for future volatility." Easley and co-authors
+replied, disputing this; the exchange is unresolved. What matters here is that
+the dispute is about **controls**, not about effect size. That is why sections
+5 and 7 of this note are about controls rather than about how large anything
+was.
 
 Three things differ in what follows. **The venue:** Hyperliquid trades
 perpetual futures, the most popular cryptocurrency derivative (He et al. 2024),
@@ -238,13 +239,13 @@ three-day run uses **744** such controls.
 
 Each of these is present for a specific reason.
 
-**Benjamini-Hochberg correction.** The study runs 120 tests — 20 variables
-across 6 lead bins — so roughly 6 will clear p < 0.05 by chance alone. BH
+**Benjamini-Hochberg correction.** The study runs 120 tests (20 variables
+across 6 lead bins), so roughly 6 will clear p < 0.05 by chance alone. BH
 adjusts the threshold for how many tests were run, and is reported as q. It is
 worth being clear about what BH does *not* do: it controls false discoveries
 arising from noise. It does nothing whatever about a confound that shifts many
 variables in the same direction at once. Section 5 is a case where 63 of 120
-tests survived BH and the correction was working perfectly — it was answering a
+tests survived BH and the correction was working perfectly: it was answering a
 question about noise, and the problem was not noise.
 
 **Placebo events.** The entire analysis re-run against deliberately fake events
@@ -312,7 +313,7 @@ three-decimal figure is in the comparison table of the three-day report).
 My events clustered in the morning. My controls did not.
 
 So I recomputed it with a rolling 24-hour lookback. That change also required
-moving from one day to three, which — as §5 explains — was what finally made
+moving from one day to three, which, as §5 explains, was what finally made
 properly hour-matched controls possible. Two things improved at once: the
 wallet definition, and the comparison it was being tested against. Their
 contributions cannot be separated from what was run, and I am not going to
@@ -356,8 +357,8 @@ effect is approximately zero in both directions.
 The obvious objection is that the second test simply had different data and got
 unlucky. It does not hold, and this is exactly the case where quoting power
 matters. At 57 events against 744 controls the design had complete power to
-detect d = 0.8 — both at p < 0.05 and at the stricter alpha BH effectively
-imposes on a mid-ranked test — and that is well below the 1.85 I was chasing.
+detect d = 0.8, both at p < 0.05 and at the stricter alpha BH effectively
+imposes on a mid-ranked test. That is well below the 1.85 I was chasing.
 **If the original effect had been real at anything near the size claimed, it
 could not have hidden from the second test.**
 
@@ -408,7 +409,7 @@ the derived window-variable table by counting distinct populated hours among
 the 744 control windows, and it is reported as a derivation rather than as a
 quotation. It is the same scarcity that forced the matching tolerance open,
 measured on the corrected three-day run rather than on the one-day run where the
-problem was first noticed — which means the constraint did not go away when the
+problem was first noticed. The constraint did not go away when the
 matching improved. It got survivable.
 
 This is why an unmatched control is not merely a noisy one. Noise across 57
@@ -451,7 +452,7 @@ placebo test that was supposed to validate everything could only be constructed
 from 5 of 13 events, because for events at hours 6, 7, 8, 9 and 22 every
 eligible minute was already within 30 minutes of an event. A guard running on
 5 events is close to no guard at all. On three days it retains 48 of 57 and
-becomes a real test — which is the same underlying scarcity problem as the
+becomes a real test. This is the same underlying scarcity problem as the
 control matching, showing up in the validation layer instead of the design
 layer. Section 7 is about what happens when that goes unnoticed.
 
@@ -826,7 +827,7 @@ someone may eventually pay for this, and a claim sold on an underpowered result
 is the seller's fault, not the buyer's.
 
 The hash proves the contract was not edited after the fact. It does not prove
-the eventual run honoured it — that depends on the run manifest citing the
+the eventual run honoured it; that depends on the run manifest citing the
 digest and on the report emitting every pre-declared item unconditionally. The
 scheme is tamper-evident, not tamper-proof, and the contract says so in those
 words.

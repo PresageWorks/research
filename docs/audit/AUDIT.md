@@ -85,8 +85,8 @@ Three separate problems with the summary sentence:
 
 The corrected §8 reports both samples in a table, states which is which, and
 says plainly that only `[-15,-10)` clears both bars. `liq_vol` has no
-strict-placebo cell in `targeted_4d_2026-08-21.csv` at all — that file covers
-six variables — so no placebo claim is made for it in either direction.
+strict-placebo cell in `targeted_4d_2026-08-21.csv` at all (that file covers
+six variables), so no placebo claim is made for it in either direction.
 
 Lead-bin conclusion, authoritative: **the surviving liquidation cell is
 `[-15,-10)`, i.e. 10–15 minutes of lead, not 15–20.**
@@ -288,7 +288,7 @@ about: a negative result from one instrument was read as a property of the
 world. `pdftotext` extracts a *text layer*. A scan has no text layer. That is a
 fact about the file format, not about whether the words can be read. The pages
 were 3680×5696 CCITT Group 4 images the whole time, and CCITT is a format TIFF
-supports natively — so the scan could be rewrapped, without decoding or
+supports natively, so the scan could be rewrapped, without decoding or
 re-encoding anything, and simply looked at. It took one script
 (`sources/extract_scanned_pdf.py`) and the words were legible.
 
@@ -309,7 +309,7 @@ version of Kyle:
 Constant-rate incorporation predicts **no lead bin in particular**. The
 canonical model of informed trading, read rather than remembered, is therefore
 an argument *against* expecting the localised pre-move signature this project
-looks for — and §2 now says so. The recollection-based version ("Kyle shows
+looks for, and §2 now says so. The recollection-based version ("Kyle shows
 informed trading moves price gradually, so expect a lead") would have been
 close enough to pass any reader's sniff test, and would have pointed the
 section the wrong way.
