@@ -1,6 +1,6 @@
 # I Built the Checks. The Checks Were Wrong Too.
 
-**Five failures inside a Hyperliquid forecasting pipeline — from a false wallet
+**Five failures inside a Hyperliquid forecasting pipeline, from a false wallet
 signal to validation tests that failed their own controls**
 
 *Research Note · Hyperliquid forecasting pipeline · August 2026*

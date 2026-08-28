@@ -1,6 +1,6 @@
 # Adversarial report: meta-testing the guards, and fixing the reporting bar
 
-Two additions, both done. **Two more real bugs found — both in the guards
+Two additions, both done. **Two more real bugs found, both in the guards
 themselves, both of which would have silently corrupted every future result.**
 
 ---
@@ -37,7 +37,7 @@ perfect result at 6 events  -> NOT_REPORTABLE
 
 A boundary bug had to be fixed: `0.50 - 0.40` is `0.09999999999999998` in
 binary floating point, so an exactly-at-bar result was being rejected. Compared
-with a `1e-9` tolerance now — the bar stays at 0.10 and does not turn on
+with a `1e-9` tolerance now; the bar stays at 0.10 and does not turn on
 representation error.
 
 ### It bites immediately
@@ -127,7 +127,7 @@ hit, because de-clustering always retained its earliest crossing. The precision
 bar was therefore unreachable for exactly the early lead bins the study exists
 to measure.
 
-Fixed: an alert is now a *cluster*, scored over its whole span — a hit if an
+Fixed: an alert is now a *cluster*, scored over its whole span, a hit if an
 event falls within tolerance of any part of it. Verified: a perfect planted
 signal now scores precision 1.000, recall 1.000; one true plus one false
 cluster scores 0.5.
@@ -151,7 +151,7 @@ chance = n_events × (cluster_span + 2·tolerance) / total_minutes
 ```
 
 Verified: a tight 25-minute alert gets floor 0.039 (lift ≈ +0.96); an always-on
-alert gets floor 1.000 (lift ≈ 0). After the fix the ordering is coherent —
+alert gets floor 1.000 (lift ≈ 0). After the fix the ordering is coherent,
 only d=2.0 clears the bar, and the noise control sits below chance.
 
 Both bugs shared a shape: **the guard looked strict while being unable to
@@ -182,7 +182,7 @@ variable × bin → Benjamini-Hochberg across all cells → hour-matched placebo
 precision for BH survivors → `Finding.status()`.
 
 On BTC 2026-08-23: 72 testable cells, 64 raw p<0.05, 64 survive BH, **0
-reportable** — all gated by the 6-event minimum. Several variables score
+reportable**, all gated by the 6-event minimum. Several variables score
 precision *below* the matched chance floor (lift −0.44), i.e. their alerts are
 wider than random and genuinely worse than nothing; the metric now says so.
 

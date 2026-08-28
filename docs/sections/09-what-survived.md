@@ -74,7 +74,7 @@ bytes    31178
 ```
 
 v2 is a clarification amendment. Two v1 clauses referred to procedures that were
-never defined — the placebo for an anchor-scored EDGE, and a control-matching
+never defined, the placebo for an anchor-scored EDGE, and a control-matching
 "declared tolerance" that the document never declared. §1.11 and §1.12 supply
 those definitions. **No threshold, score, or outcome criterion differs from v1**,
 and the `SURVIVES` and `SUSPICIOUS` blocks are byte-identical between versions.

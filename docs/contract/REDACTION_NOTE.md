@@ -67,6 +67,6 @@ breaking a digest published in advance.
 ## On the differing digests
 
 The public editions hash to different values than the ratified documents. That
-is arithmetic, not tampering — a redacted file is a different file. Both sets of
+is arithmetic, not tampering: a redacted file is a different file. Both sets of
 digests are published in `HASHES.txt` and clearly labelled. Do not expect the
 public editions to reproduce the ratified digests; they cannot, by construction.

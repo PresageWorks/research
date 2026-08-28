@@ -24,7 +24,7 @@ suspicion. Six of them look like a mechanism.
 
 The fix has two parts, and only having both is sufficient: average ranks for
 ties via `scipy.stats.rankdata`, and outright exclusion of zero-variance
-variables before any ranking statistic runs. Verified at the three boundaries —
+variables before any ranking statistic runs. Verified at the three boundaries,
 all values tied gives 0.500, perfect separation gives 1.000, no separation
 gives 0.500.
 
@@ -38,5 +38,5 @@ non-overlapping controls; the pre-repair run on 157 overlapping controls gave
 
 The failure mode here is not a crash, an exception, or a NaN. It is a beautiful
 number, and it would have survived to publication. `liq_count` remains declared
-in the pre-registered feature list for exactly that reason — §10 returns to why
+in the pre-registered feature list for exactly that reason, §10 returns to why
 a known-dead variable is better left visible than quietly deleted.

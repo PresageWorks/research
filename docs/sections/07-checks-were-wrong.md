@@ -1,6 +1,6 @@
 ## 7 — I Built the Checks. The Checks Were Wrong Too.
 
-*The guards lied — twice, and the second time because I had just fixed the
+*The guards lied, twice, and the second time because I had just fixed the
 first.*
 
 After the AUC bug I built a meta-test suite: guards against exactly that class
@@ -27,7 +27,7 @@ result, and both were in the guards rather than in the thing being guarded.
 
 ### The first failure
 
-Planted signal at d = 2.0 — as obvious as a signal gets. Precision lift:
+Planted signal at d = 2.0, as obvious as a signal gets. Precision lift:
 **−0.014**.
 
 A perfect signal scored nothing.
@@ -35,7 +35,7 @@ A perfect signal scored nothing.
 The cause was in the de-clustering logic. When a variable crosses its threshold
 repeatedly, consecutive alerts are collapsed into one, and the implementation
 kept the *first* crossing. A signal elevated across the whole 30-minute
-pre-window first crosses about 25 minutes out — outside the ±15-minute hit
+pre-window first crosses about 25 minutes out, outside the ±15-minute hit
 tolerance. The alert was therefore never scored as a hit.
 
 ![Figure 4](figures/fig4-alert-window.png)
@@ -46,20 +46,20 @@ can be recorded. Schematic; no data.
 
 **Any signal leading by more than the hit tolerance could never register.** The
 precision bar was structurally unreachable for exactly the early lead bins this
-study exists to measure — the ones §4 and §5 are about.
+study exists to measure: the ones §4 and §5 are about.
 
 That bug was inherited from the archive pipeline's evaluation code, which means
 the early-bin precision figures in the earlier runs were affected by it too.
 
 The fix scores an alert as a *cluster* over its whole span: a hit if an event
-falls within tolerance of any part of it. Verified — a perfect planted signal
+falls within tolerance of any part of it. Verified: a perfect planted signal
 now scores precision 1.000 and recall 1.000, and one true plus one false
 cluster scores 0.5.
 
 ### The second failure
 
 Re-run. Planted d = 2.0 now scored correctly. And **pure noise scored the
-highest precision lift of anything measured — +0.571**, beating the planted
+highest precision lift of anything measured, +0.571**, beating the planted
 perfect signal at +0.252.
 
 The negative control came first.
@@ -79,7 +79,7 @@ chance = n_events × (cluster_span + 2 × tolerance) / total_minutes
 
 Verified at both extremes: a tight 25-minute alert gets a floor of 0.039, and an
 always-on alert gets a floor of 1.000 and a lift of approximately zero. After
-the fix the ordering is coherent — only the d = 2.0 plant clears the bar, and
+the fix the ordering is coherent, only the d = 2.0 plant clears the bar, and
 the noise control sits below chance.
 
 The second bug was created by fixing the first. Cluster-span scoring is correct
@@ -104,7 +104,7 @@ of measuring what it claimed to measure.**
 
 Bin `[-5,0)`. The `all three` column requires detection, BH survival and placebo
 separation simultaneously, which is the bar a real finding has to clear. The
-d = 0.0 row is the negative control, and 5% is α — the suite is quiet when there
+d = 0.0 row is the negative control, and 5% is α; the suite is quiet when there
 is nothing there.
 
 The earliest bin, the one the whole study is about, behaves the same way. On

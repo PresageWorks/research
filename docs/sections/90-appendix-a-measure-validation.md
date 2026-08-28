@@ -22,7 +22,7 @@ entitled to call *edge* in the first place?
 The intuitive definition of edge is that the richer model's forecast differs
 from the baseline's. That definition is wrong, and wrong in a way that always
 favours the richer model, because **any model with additional inputs produces a
-different distribution than a simpler one — including when those inputs are pure
+different distribution than a simpler one, including when those inputs are pure
 noise.**
 
 The intuition matters because it determines what the pre-registered primary test
@@ -44,7 +44,7 @@ Both models are synthetic constructions; neither has ever seen a market.
 
 Three of the five report edge on nothing. The two distances are strictly
 positive because B's forecast genuinely differs from A's on every single
-observation — it is just differently wrong, and a distance has no way to tell
+observation; it is just differently wrong, and a distance has no way to tell
 those apart.
 
 The third failure is the one worth sitting with. In-sample CRPS is a strictly
@@ -75,7 +75,7 @@ One honest wrinkle sits in that table at β = 0.15, where CRPS edge is −0.0007
 a real signal, genuinely present by construction, which the measure scores
 slightly negative. Nothing is broken. The signal is too weak to pay for the
 parameters needed to estimate it at n = 400, so using it costs more accuracy
-than it returns. Absence of measured edge is not proof of absence of signal — it
+than it returns. Absence of measured edge is not proof of absence of signal, it
 can equally mean the signal is real and not worth its own estimation cost. Which
 is a perfectly good reason not to trade on it, and a bad reason to conclude
 nothing is there.

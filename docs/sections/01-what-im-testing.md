@@ -11,7 +11,7 @@ price at 5–30 minute horizons, beyond what price and realised volatility
 already provide?
 
 **This note does not answer that question.** The primary test is pre-registered
-and has not been run. It requires more data than currently exists — the
+and has not been run. It requires more data than currently exists: the
 contract sets the trigger at 30 out-of-sample events, roughly 75 in total, and
 the most recent live run had six.
 

@@ -1,6 +1,6 @@
 # I Built the Checks. The Checks Were Wrong Too.
 
-**Five failures inside a Hyperliquid forecasting pipeline — from a false wallet
+**Five failures inside a Hyperliquid forecasting pipeline, from a false wallet
 signal to validation tests that failed their own controls**
 
 *Research Note · Hyperliquid forecasting pipeline · August 2026*
@@ -29,7 +29,7 @@ price at 5–30 minute horizons, beyond what price and realised volatility
 already provide?
 
 **This note does not answer that question.** The primary test is pre-registered
-and has not been run. It requires more data than currently exists — the
+and has not been run. It requires more data than currently exists: the
 contract sets the trigger at 30 out-of-sample events, roughly 75 in total, and
 the most recent live run had six.
 
@@ -82,7 +82,7 @@ second to ten minutes. Over short intervals, order flow does not merely
 correlate with price; it accounts for most of the variation.
 
 **That result is contemporaneous.** They regress the price change over an
-interval on the order flow imbalance over *the same* interval — their text
+interval on the order flow imbalance over *the same* interval, their text
 describes OFI*k* as "the contemporaneous order flow imbalances." Explaining a
 move as it happens is not the same as seeing it coming, and the second is what
 this project asks about.
@@ -104,7 +104,7 @@ perpetual futures, the most popular cryptocurrency derivative (He et al. 2024),
 and is fully on-chain, so per-fill wallet identity and labelled liquidations are
 recorded rather than reconstructed from a leverage model. **The horizon:** 5–30
 minutes *ahead of* a large move, not ten seconds around one. **The shape:** what
-this project looks for is a *localised* pre-move signature — a variable that
+this project looks for is a *localised* pre-move signature: a variable that
 separates in a specific lead bin. That is not what Kyle's model predicts.
 Information arriving at a constant rate produces no bin in particular, and a
 result that concentrates in one bin is therefore as much a reason for suspicion
@@ -127,7 +127,7 @@ a result on one venue over a few days.
 
 **References.** Every entry below was verified against the publisher, arXiv, or
 Crossref record, and every quotation above was read from the body text of the
-paper rather than from its abstract — for Kyle, off the rendered pages of the
+paper rather than from its abstract, for Kyle, off the rendered pages of the
 scan. Anything not verifiable to that standard was to be dropped rather than
 cited; the one source that nearly was, and why that would have been a mistake,
 is in `AUDIT.md` (A9).
@@ -175,14 +175,14 @@ runs separately and is not used in this note.
 Four-day archive volume: **2,252,025,001 bytes**, verified byte-exact against
 local files after download.
 
-One schema fact changed every number in the study. **Each trade appears twice —
+One schema fact changed every number in the study. **Each trade appears twice,
 once per counterparty.** All 6,454,874 `trade_id`s have exactly two rows, with
 opposite `side`, opposite `crossed`, and identical price and size. The
 aggressor is the `crossed = true` row, confirmed through fees: mean fee 0.8954
 for `crossed = true` against 0.0071 for `crossed = false`, with maker fees going
 negative to a minimum of −183.88. Every figure in this note uses taker rows
 only. Had that gone unread, volume would have doubled and buy/sell aggressor
-imbalance would have been identically zero — `side` splits exactly 50/50 across
+imbalance would have been identically zero, `side` splits exactly 50/50 across
 the raw file precisely because both sides are present.
 
 ### Events
@@ -208,7 +208,7 @@ visible if it happens.
 One spec observation, recorded at the time and not adjusted: the rule compares
 a *5-minute* return against 4× the standard deviation of *1-minute* returns.
 Under a random walk a 5-minute return has standard deviation ≈ √5 × σ₁ₘ, so
-4 × σ₁ₘ is ≈ 1.8σ in 5-minute terms — a considerably looser bar than "4 sigma"
+4 × σ₁ₘ is ≈ 1.8σ in 5-minute terms: a considerably looser bar than "4 sigma"
 sounds. It was implemented exactly as specified. Noting it as an observation
 about the specification, not as a change to it.
 
@@ -220,7 +220,7 @@ six 5-minute lead bins.
 **Control construction** is where most of the difficulty in this design lives,
 and it is worth being explicit about, because §5 is entirely about getting it
 wrong. A control window is a stretch of ordinary market that the event windows
-are compared against. Choosing them badly does not add noise — noise would wash
+are compared against. Choosing them badly does not add noise: noise would wash
 out across 57 events. It introduces a systematic difference with a consistent
 sign, which survives every statistical correction you can apply, because the
 difference is real. It just isn't the difference you're claiming to measure.
@@ -259,7 +259,7 @@ study with low power fails to find things that are there. Every null in this
 note is quoted against the effect size the design could actually have caught.
 
 **Sensitivity floor.** The smallest effect the pipeline reliably recovers at the
-current sample size — measured by planting known signals rather than assumed
+current sample size, measured by planting known signals rather than assumed
 from a formula. Section 7 covers how this is measured, and why the number came
 out worse than the formula suggested.
 
@@ -296,7 +296,7 @@ describes a thermometer noticing a fire, not a smoke alarm. By the time it
 registers, the move is already happening and there is nothing to do with it.
 
 `new_wallet_frac` ran the other way. Strongest at 25–30 minutes out, fading to
-nothing by the time price actually moved — d = 1.85 at `[-30,-25)` decaying to
+nothing by the time price actually moved, d = 1.85 at `[-30,-25)` decaying to
 d = 0.81 and non-significant at `[-5,0)` (q = 0.381). That is what a leading
 indicator is supposed to look like, and it was the only variable that did it.
 
@@ -336,7 +336,7 @@ pretend otherwise.
 Columns through `q (BH)` are the full 57-event comparison from
 `stats_4d_2026-08-21.csv`. The placebo column is necessarily the
 strict hour-matched subset from `targeted_4d_2026-08-21.csv`, because
-that is the only sample a placebo can be built on — it is a different
+that is the only sample a placebo can be built on; it is a different
 sample and is labelled as one.
 
 Not one cell survives correction, and no cell separates from the hour-matched
@@ -350,7 +350,7 @@ to a range of **0.114–0.149** across all 24 hours. One residual is worth namin
 the daily mean still drifts down across the three days, 0.161 → 0.128 → 0.110.
 That is a slow multi-day trend rather than the within-day sawtooth, and since
 events and controls are both spread across all three days it is largely
-balanced. It could not be hiding anything here in any case — the measured
+balanced. It could not be hiding anything here in any case: the measured
 effect is approximately zero in both directions.
 
 The obvious objection is that the second test simply had different data and got
@@ -363,7 +363,7 @@ could not have hidden from the second test.**
 
 One cell is genuinely unresolved. `[-25,-20)` sits at d = +0.23 with placebo
 p = 0.069: too small to distinguish from nothing at this sample size, and
-equally consistent with a small real effect. The power table says why — at 57
+equally consistent with a small real effect. The power table says why, at 57
 events, d = 0.2 is detected 31% of the time before correction and 4% after,
 d = 0.3 is 59% and 15%. Separating those two possibilities needs roughly
 **250–400 events**, about 15–25 trading days. I am not counting it either way.
@@ -495,7 +495,7 @@ suspicion. Six of them look like a mechanism.
 
 The fix has two parts, and only having both is sufficient: average ranks for
 ties via `scipy.stats.rankdata`, and outright exclusion of zero-variance
-variables before any ranking statistic runs. Verified at the three boundaries —
+variables before any ranking statistic runs. Verified at the three boundaries,
 all values tied gives 0.500, perfect separation gives 1.000, no separation
 gives 0.500.
 
@@ -509,12 +509,12 @@ non-overlapping controls; the pre-repair run on 157 overlapping controls gave
 
 The failure mode here is not a crash, an exception, or a NaN. It is a beautiful
 number, and it would have survived to publication. `liq_count` remains declared
-in the pre-registered feature list for exactly that reason — §10 returns to why
+in the pre-registered feature list for exactly that reason, §10 returns to why
 a known-dead variable is better left visible than quietly deleted.
 
 ## 7 — I Built the Checks. The Checks Were Wrong Too.
 
-*The guards lied — twice, and the second time because I had just fixed the
+*The guards lied, twice, and the second time because I had just fixed the
 first.*
 
 After the AUC bug I built a meta-test suite: guards against exactly that class
@@ -541,7 +541,7 @@ result, and both were in the guards rather than in the thing being guarded.
 
 ### The first failure
 
-Planted signal at d = 2.0 — as obvious as a signal gets. Precision lift:
+Planted signal at d = 2.0, as obvious as a signal gets. Precision lift:
 **−0.014**.
 
 A perfect signal scored nothing.
@@ -549,7 +549,7 @@ A perfect signal scored nothing.
 The cause was in the de-clustering logic. When a variable crosses its threshold
 repeatedly, consecutive alerts are collapsed into one, and the implementation
 kept the *first* crossing. A signal elevated across the whole 30-minute
-pre-window first crosses about 25 minutes out — outside the ±15-minute hit
+pre-window first crosses about 25 minutes out, outside the ±15-minute hit
 tolerance. The alert was therefore never scored as a hit.
 
 ![Figure 4](figures/fig4-alert-window.png)
@@ -560,20 +560,20 @@ can be recorded. Schematic; no data.
 
 **Any signal leading by more than the hit tolerance could never register.** The
 precision bar was structurally unreachable for exactly the early lead bins this
-study exists to measure — the ones §4 and §5 are about.
+study exists to measure: the ones §4 and §5 are about.
 
 That bug was inherited from the archive pipeline's evaluation code, which means
 the early-bin precision figures in the earlier runs were affected by it too.
 
 The fix scores an alert as a *cluster* over its whole span: a hit if an event
-falls within tolerance of any part of it. Verified — a perfect planted signal
+falls within tolerance of any part of it. Verified: a perfect planted signal
 now scores precision 1.000 and recall 1.000, and one true plus one false
 cluster scores 0.5.
 
 ### The second failure
 
 Re-run. Planted d = 2.0 now scored correctly. And **pure noise scored the
-highest precision lift of anything measured — +0.571**, beating the planted
+highest precision lift of anything measured, +0.571**, beating the planted
 perfect signal at +0.252.
 
 The negative control came first.
@@ -593,7 +593,7 @@ chance = n_events × (cluster_span + 2 × tolerance) / total_minutes
 
 Verified at both extremes: a tight 25-minute alert gets a floor of 0.039, and an
 always-on alert gets a floor of 1.000 and a lift of approximately zero. After
-the fix the ordering is coherent — only the d = 2.0 plant clears the bar, and
+the fix the ordering is coherent, only the d = 2.0 plant clears the bar, and
 the noise control sits below chance.
 
 The second bug was created by fixing the first. Cluster-span scoring is correct
@@ -618,7 +618,7 @@ of measuring what it claimed to measure.**
 
 Bin `[-5,0)`. The `all three` column requires detection, BH survival and placebo
 separation simultaneously, which is the bar a real finding has to clear. The
-d = 0.0 row is the negative control, and 5% is α — the suite is quiet when there
+d = 0.0 row is the negative control, and 5% is α; the suite is quiet when there
 is nothing there.
 
 The earliest bin, the one the whole study is about, behaves the same way. On
@@ -675,7 +675,7 @@ contributions cannot be separated from what was run. The refutation stands —
 d = −0.04 where d = +1.85 was claimed, at power sufficient to have caught it —
 but the attribution does not.
 
-**Mechanism versus precursor — superseded by the control-overlap repair.**
+**Mechanism versus precursor, superseded by the control-overlap repair.**
 
 The strongest surviving pre-move signal was liquidation build-up. It no longer
 survives. On 2026-08-26 an audit found that control anchors were selected one
@@ -695,7 +695,7 @@ After repair (`results/repair_2026-08-26.md`):
 only three cells that survive anywhere in the table sit in `[-5,0)`, the bin
 adjacent to the move. The strict-subset figure of d = 1.15 quoted in earlier
 drafts was computed on the same overlapping controls and is superseded twice
-over — once by the exploration, which showed the elevation was pooled-SD
+over, once by the exploration, which showed the elevation was pooled-SD
 arithmetic, and again by the repair.
 
 A liquidation cascade may in any case *be* the move rather than precede it, and
@@ -703,13 +703,13 @@ this design cannot distinguish those readings. That caveat now applies to a cell
 that no longer clears the bar.
 
 **Coverage, not nulls.** The archived order book runs 20 levels per side, and
-20 levels reach a median of **0.029% from mid** — about $19 on a ~$70k book. The
+20 levels reach a median of **0.029% from mid**, about $19 on a ~$70k book. The
 liquidity bands the hypothesis is actually about are 0.10%, 0.25% and 0.50%,
 which are wider than the entire recorded book: **in 0 of 5,739 snapshots** does
 it reach even the tightest of them. All three bands equal total depth exactly.
 That is not evidence against the liquidity hypothesis. It is a dataset that
 cannot address it, and reporting it as a null would have been a fifth
-manufactured result — the most tempting of the five, because a null is
+manufactured result, the most tempting of the five, because a null is
 publishable and "we cannot see the thing" is not.
 
 The order-book run has a second structural limit worth stating alongside the
@@ -721,7 +721,7 @@ dataset, which is why the live recorder captures at a finer cadence instead.
 
 **Reading the nulls correctly.** Every null in this note means "no effect larger
 than the measured sensitivity floor was detected". At these sample sizes that
-floor is d ≈ 2.0, which is very high — high enough that the phrase "we found
+floor is d ≈ 2.0, which is very high: high enough that the phrase "we found
 nothing" would be actively misleading without it attached.
 
 ## 10 — What survived
@@ -800,7 +800,7 @@ bytes    31178
 ```
 
 v2 is a clarification amendment. Two v1 clauses referred to procedures that were
-never defined — the placebo for an anchor-scored EDGE, and a control-matching
+never defined, the placebo for an anchor-scored EDGE, and a control-matching
 "declared tolerance" that the document never declared. §1.11 and §1.12 supply
 those definitions. **No threshold, score, or outcome criterion differs from v1**,
 and the `SURVIVES` and `SUSPICIOUS` blocks are byte-identical between versions.
@@ -863,7 +863,7 @@ entitled to call *edge* in the first place?
 The intuitive definition of edge is that the richer model's forecast differs
 from the baseline's. That definition is wrong, and wrong in a way that always
 favours the richer model, because **any model with additional inputs produces a
-different distribution than a simpler one — including when those inputs are pure
+different distribution than a simpler one, including when those inputs are pure
 noise.**
 
 The intuition matters because it determines what the pre-registered primary test
@@ -885,7 +885,7 @@ Both models are synthetic constructions; neither has ever seen a market.
 
 Three of the five report edge on nothing. The two distances are strictly
 positive because B's forecast genuinely differs from A's on every single
-observation — it is just differently wrong, and a distance has no way to tell
+observation; it is just differently wrong, and a distance has no way to tell
 those apart.
 
 The third failure is the one worth sitting with. In-sample CRPS is a strictly
@@ -916,7 +916,7 @@ One honest wrinkle sits in that table at β = 0.15, where CRPS edge is −0.0007
 a real signal, genuinely present by construction, which the measure scores
 slightly negative. Nothing is broken. The signal is too weak to pay for the
 parameters needed to estimate it at n = 400, so using it costs more accuracy
-than it returns. Absence of measured edge is not proof of absence of signal — it
+than it returns. Absence of measured edge is not proof of absence of signal, it
 can equally mean the signal is real and not worth its own estimation cost. Which
 is a perfectly good reason not to trade on it, and a bad reason to conclude
 nothing is there.

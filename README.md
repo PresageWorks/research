@@ -25,7 +25,7 @@ raw or captured market data. No derived feature matrices. No capture
 configuration, infrastructure, scheduling or operational tooling. No individual
 feature names. No credentials, endpoints, hostnames, or local paths.
 
-Some of these omissions have a cost, and the cost is stated where it applies —
+Some of these omissions have a cost, and the cost is stated where it applies,
 see `docs/contract/REDACTION_NOTE.md` for what redacting the feature list does
 and does not preserve, and the note in `docs/verification/` for why the
 production checker is not shipped here.
@@ -45,7 +45,7 @@ production checker is not shipped here.
 
 The note is titled *I Built the Checks. The Checks Were Wrong Too.* It reports
 five occasions on which this project produced a convincing-looking answer that
-was wrong — including the case where the validation machinery built to catch
+was wrong, including the case where the validation machinery built to catch
 the first three failures had the same defect. **The primary pre-registered test
 has not been run.** It requires more data than currently exists. Anything in
 this repository that looks like a market result is either an exploratory result
@@ -55,12 +55,12 @@ from a permanently quarantined dataset, or a demonstration on synthetic inputs.
 
 Three scripts, all self-contained, none requiring private data:
 
-- `verify_public_record.py` — checks this repository's integrity: contract
+- `verify_public_record.py`, checks this repository's integrity: contract
   digests, that the note matches its sections, figures, citation hygiene, and a
   disclosure regression test that fails if a private token ever appears here.
-- `meta_test_synthetic.py` — demonstrates the guard meta-testing method
+- `meta_test_synthetic.py`, demonstrates the guard meta-testing method
   (positive and negative controls, sensitivity floor) on synthetic data.
-- `placebo_edge_synthetic.py` — the placebo design for the contract's primary
+- `placebo_edge_synthetic.py`, the placebo design for the contract's primary
   skill metric, on synthetic data.
 
 The production checker that re-derives every number in the note from the

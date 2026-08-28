@@ -1,5 +1,5 @@
 ---
-title: PRESAGE — public research record
+title: PRESAGE, public research record
 ---
 
 # PRESAGE — public research record
@@ -9,7 +9,7 @@ published claims can be audited from outside the company.
 
 ## Read
 
-- **[The research note](research-note.md)** — *I Built the Checks. The Checks
+- **[The research note](research-note.md)**, *I Built the Checks. The Checks
   Were Wrong Too.* Five occasions on which this project produced a
   convincing-looking answer that was wrong, including the case where the
   checks built to catch the first three had the same defect.

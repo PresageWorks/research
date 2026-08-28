@@ -60,7 +60,7 @@ any p-value or q-value, however the result comes out.
 This is not a statement about data quality. The dataset is fine. It is a
 statement about what has already been spent: these events have been looked at,
 sliced, and re-tested enough times that no correction can restore a valid null
-distribution over them. The multiple-comparison burden is not merely large — it
+distribution over them. The multiple-comparison burden is not merely large, it
 is unknown, because it includes every analysis choice made after seeing an
 intermediate result.
 
@@ -93,5 +93,5 @@ carefully enough to evade it. The rule is the control; the check is a reminder.
 The pre-registered primary test in `EVALUATION_CONTRACT.md` is unaffected: it
 runs on live-capture data and its trigger is ≥ 30 out-of-sample events. Nothing
 in the quarantined window counts toward that threshold. The control repair does
-not touch it either — the primary score is CRPS on anchors, not an
+not touch it either: the primary score is CRPS on anchors, not an
 event-versus-control comparison (`repair_2026-08-26.md` §3).

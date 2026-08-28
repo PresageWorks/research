@@ -6,7 +6,7 @@ so this file is excluded by construction.
 **Standing rule: the artifact wins over the prose.** Where a run report's
 summary sentence and the recorded evidence disagree, the evidence is
 authoritative and the sentence is corrected. This applies to the run reports in
-`results/` as much as to drafts of this note — those reports are prose too, and
+`results/` as much as to drafts of this note, those reports are prose too, and
 two of the entries below are cases where a report's own summary was incomplete.
 
 ---
@@ -37,7 +37,7 @@ mis-attribution would have shipped.
 
 **This was not a planted test case.** It was a genuine slip made while drafting,
 found by the checker on its first full run. That is the strongest available
-evidence the checker does something — an assertion suite that has never caught a
+evidence the checker does something: an assertion suite that has never caught a
 real error is in exactly the position §7 of the note describes: indistinguishable
 from one that cannot fire.
 
@@ -126,7 +126,7 @@ a contiguous block, which is the wrong picture: the controls are scattered.
 
 > *"controls concentrated at 10, 14, 15, 17, 19, 20 with mean 16.7"*
 
-The note now uses exactly that. The distinction is not cosmetic — a contiguous
+The note now uses exactly that. The distinction is not cosmetic: a contiguous
 afternoon block and a scattered set with an afternoon mean imply different things
 about why same-hour matching failed.
 
@@ -158,7 +158,7 @@ sentence:
 > **"The prototype is frozen as of this document. No result in it may be cited
 > in any real-data report, in any direction, including as a sanity check."**
 
-The earlier call rested on the first sentence, which is narrow — it prohibits
+The earlier call rested on the first sentence, which is narrow, it prohibits
 using prototype output as evidence *about markets*, and a demonstration about
 the behaviour of a scoring rule is not that.
 
@@ -189,7 +189,7 @@ lists the fifth failure under `A` rather than `8`.
 No run report states it. It is derived in this note from
 the derived window-variable table by counting distinct populated hours among
 the 744 control windows, and `figures/make_figures.py` computes it at render
-time rather than hard-coding it — the figure subtitle prints whatever the
+time rather than hard-coding it: the figure subtitle prints whatever the
 parquet currently says.
 
 It is labelled in §5 as new to this note. Worth keeping because it measures the
@@ -246,10 +246,10 @@ number came from.
 
 **Status: written. One canonical source was dropped as unreadable, then
 restored once it turned out to be readable. The drop was the error, and it had
-consequences for the argument — see below.**
+consequences for the argument, see below.**
 
 Every other number in this note can be checked against a file on disk. A
-citation cannot — the failure mode is fabrication, and it is invisible to
+citation cannot, the failure mode is fabrication, and it is invisible to
 `build.py --check`, which can confirm a DOI is well-formed but not that the
 paper says what the sentence claims. The standard adopted was therefore
 stricter than the rest of the note requires:
@@ -271,7 +271,7 @@ the canonical citation for this section. It was **first excluded, then cited**,
 and the reversal is the most instructive thing in this entry.
 
 **The first pass.** Every copy I could reach was an image scan. `pdftotext`
-returned **23 characters** from one and **1,285** from the other — the latter
+returned **23 characters** from one and **1,285** from the other: the latter
 being the JSTOR cover sheet alone. Bibliographic existence was verified three
 independent ways (Crossref `10.2307/1913210`, RePEc, and the cover sheet, which
 also settles the page range as 1315–1336 against RePEc's truncated `1315-35`).
@@ -297,7 +297,7 @@ failed extraction, it is a successful extraction of a cover page.** The tool
 worked perfectly. It reported exactly what it found. I read "the tool returned
 almost nothing" as "there is almost nothing there."
 
-**What restoring it changed.** Not a tidier bibliography — the argument. Read
+**What restoring it changed.** Not a tidier bibliography: the argument. Read
 from the rendered pages, Kyle says something more specific than the recalled
 version of Kyle:
 
@@ -330,11 +330,11 @@ anything from its silence. The scan was supplied on request and read in minutes.
 | Cont, Kukanov & Stoikov 2014 | Crossref | yes | §1; Table 2 note |
 | Easley, López de Prado & O'Hara 2012 | Crossref | yes, accepted ver. | §1 Introduction |
 | Andersen & Bondarenko 2014 (dispute) | Crossref | yes, CREATES 2013-42 | Abstract §; §1 |
-| Easley et al. 2014 (rejoinder) | Crossref | **no — abstract only** | cited only for the *existence* of a reply |
+| Easley et al. 2014 (rejoinder) | Crossref | **no, abstract only** | cited only for the *existence* of a reply |
 | Gould et al. 2013 | Crossref | yes, 203,927 ch | §IV opening |
 | He et al. 2024 | arXiv | yes, 107,789 ch | Abstract; §1 |
 | Garcia Seuma 2026 | arXiv | yes, HTML | §4.5, §4.6 |
-| Kyle 1985 | Crossref | yes — scan rendered and read | pp. 1315–1316, §1 |
+| Kyle 1985 | Crossref | yes, scan rendered and read | pp. 1315–1316, §1 |
 
 The rejoinder is the one entry cited without reading the body. It is used for a
 single narrow claim — that Easley and co-authors replied and disputed the
@@ -353,5 +353,5 @@ contemporaneous order flow imbalances."
 An earlier draft of this section would have cited that R² of 65% as evidence
 that order flow *predicts* price. It does not; it explains price
 contemporaneously. Had §2 been drafted from recollection, that sentence would
-have been wrong in exactly the way the rest of the note documents — plausible,
+have been wrong in exactly the way the rest of the note documents, plausible,
 citable, and backwards.

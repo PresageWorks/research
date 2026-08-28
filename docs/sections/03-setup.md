@@ -13,14 +13,14 @@ runs separately and is not used in this note.
 Four-day archive volume: **2,252,025,001 bytes**, verified byte-exact against
 local files after download.
 
-One schema fact changed every number in the study. **Each trade appears twice —
+One schema fact changed every number in the study. **Each trade appears twice,
 once per counterparty.** All 6,454,874 `trade_id`s have exactly two rows, with
 opposite `side`, opposite `crossed`, and identical price and size. The
 aggressor is the `crossed = true` row, confirmed through fees: mean fee 0.8954
 for `crossed = true` against 0.0071 for `crossed = false`, with maker fees going
 negative to a minimum of −183.88. Every figure in this note uses taker rows
 only. Had that gone unread, volume would have doubled and buy/sell aggressor
-imbalance would have been identically zero — `side` splits exactly 50/50 across
+imbalance would have been identically zero, `side` splits exactly 50/50 across
 the raw file precisely because both sides are present.
 
 ### Events
@@ -46,7 +46,7 @@ visible if it happens.
 One spec observation, recorded at the time and not adjusted: the rule compares
 a *5-minute* return against 4× the standard deviation of *1-minute* returns.
 Under a random walk a 5-minute return has standard deviation ≈ √5 × σ₁ₘ, so
-4 × σ₁ₘ is ≈ 1.8σ in 5-minute terms — a considerably looser bar than "4 sigma"
+4 × σ₁ₘ is ≈ 1.8σ in 5-minute terms: a considerably looser bar than "4 sigma"
 sounds. It was implemented exactly as specified. Noting it as an observation
 about the specification, not as a change to it.
 
@@ -58,7 +58,7 @@ six 5-minute lead bins.
 **Control construction** is where most of the difficulty in this design lives,
 and it is worth being explicit about, because §5 is entirely about getting it
 wrong. A control window is a stretch of ordinary market that the event windows
-are compared against. Choosing them badly does not add noise — noise would wash
+are compared against. Choosing them badly does not add noise: noise would wash
 out across 57 events. It introduces a systematic difference with a consistent
 sign, which survives every statistical correction you can apply, because the
 difference is real. It just isn't the difference you're claiming to measure.
@@ -97,7 +97,7 @@ study with low power fails to find things that are there. Every null in this
 note is quoted against the effect size the design could actually have caught.
 
 **Sensitivity floor.** The smallest effect the pipeline reliably recovers at the
-current sample size — measured by planting known signals rather than assumed
+current sample size, measured by planting known signals rather than assumed
 from a formula. Section 7 covers how this is measured, and why the number came
 out worse than the formula suggested.
 

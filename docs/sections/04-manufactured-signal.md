@@ -19,7 +19,7 @@ describes a thermometer noticing a fire, not a smoke alarm. By the time it
 registers, the move is already happening and there is nothing to do with it.
 
 `new_wallet_frac` ran the other way. Strongest at 25–30 minutes out, fading to
-nothing by the time price actually moved — d = 1.85 at `[-30,-25)` decaying to
+nothing by the time price actually moved, d = 1.85 at `[-30,-25)` decaying to
 d = 0.81 and non-significant at `[-5,0)` (q = 0.381). That is what a leading
 indicator is supposed to look like, and it was the only variable that did it.
 
@@ -59,7 +59,7 @@ pretend otherwise.
 Columns through `q (BH)` are the full 57-event comparison from
 `stats_4d_2026-08-21.csv`. The placebo column is necessarily the
 strict hour-matched subset from `targeted_4d_2026-08-21.csv`, because
-that is the only sample a placebo can be built on — it is a different
+that is the only sample a placebo can be built on; it is a different
 sample and is labelled as one.
 
 Not one cell survives correction, and no cell separates from the hour-matched
@@ -73,7 +73,7 @@ to a range of **0.114–0.149** across all 24 hours. One residual is worth namin
 the daily mean still drifts down across the three days, 0.161 → 0.128 → 0.110.
 That is a slow multi-day trend rather than the within-day sawtooth, and since
 events and controls are both spread across all three days it is largely
-balanced. It could not be hiding anything here in any case — the measured
+balanced. It could not be hiding anything here in any case: the measured
 effect is approximately zero in both directions.
 
 The obvious objection is that the second test simply had different data and got
@@ -86,7 +86,7 @@ could not have hidden from the second test.**
 
 One cell is genuinely unresolved. `[-25,-20)` sits at d = +0.23 with placebo
 p = 0.069: too small to distinguish from nothing at this sample size, and
-equally consistent with a small real effect. The power table says why — at 57
+equally consistent with a small real effect. The power table says why, at 57
 events, d = 0.2 is detected 31% of the time before correction and 4% after,
 d = 0.3 is 59% and 15%. Separating those two possibilities needs roughly
 **250–400 events**, about 15–25 trading days. I am not counting it either way.

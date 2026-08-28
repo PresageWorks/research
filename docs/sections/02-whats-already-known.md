@@ -22,7 +22,7 @@ second to ten minutes. Over short intervals, order flow does not merely
 correlate with price; it accounts for most of the variation.
 
 **That result is contemporaneous.** They regress the price change over an
-interval on the order flow imbalance over *the same* interval — their text
+interval on the order flow imbalance over *the same* interval, their text
 describes OFI*k* as "the contemporaneous order flow imbalances." Explaining a
 move as it happens is not the same as seeing it coming, and the second is what
 this project asks about.
@@ -44,7 +44,7 @@ perpetual futures, the most popular cryptocurrency derivative (He et al. 2024),
 and is fully on-chain, so per-fill wallet identity and labelled liquidations are
 recorded rather than reconstructed from a leverage model. **The horizon:** 5–30
 minutes *ahead of* a large move, not ten seconds around one. **The shape:** what
-this project looks for is a *localised* pre-move signature — a variable that
+this project looks for is a *localised* pre-move signature: a variable that
 separates in a specific lead bin. That is not what Kyle's model predicts.
 Information arriving at a constant rate produces no bin in particular, and a
 result that concentrates in one bin is therefore as much a reason for suspicion
@@ -67,7 +67,7 @@ a result on one venue over a few days.
 
 **References.** Every entry below was verified against the publisher, arXiv, or
 Crossref record, and every quotation above was read from the body text of the
-paper rather than from its abstract — for Kyle, off the rendered pages of the
+paper rather than from its abstract, for Kyle, off the rendered pages of the
 scan. Anything not verifiable to that standard was to be dropped rather than
 cited; the one source that nearly was, and why that would have been a mistake,
 is in `AUDIT.md` (A9).
