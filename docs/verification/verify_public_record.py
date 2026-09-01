@@ -124,7 +124,7 @@ if sec2 is not None:
     expect("reference list parsed", len(refs) >= 9, f"{len(refs)} entries")
     bad = [r[:40] for r in refs if "doi:" not in r and "arXiv:" not in r]
     expect("every reference carries a DOI or arXiv id", not bad, "; ".join(bad))
-    for tag in ("arXiv:2607.27070", "arXiv:2212.06888"):
+    for tag in ("arXiv:2607.27070", "arXiv:2212.06888", "arXiv:2606.15715"):
         i = t.find(tag)
         expect(f"{tag} labelled as a preprint",
                i > 0 and "not peer reviewed" in t[i:i + 260])

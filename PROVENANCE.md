@@ -2,7 +2,7 @@
 
 ## Private production repository
 
-    commit 2e80b6b46872759a6e17799cd1bb56033098bd52
+    commit 2a7c8fbb68e18246f7b99a39e17e703e6b1e1952
 
 This hash identifies the private source state associated with this publication.
 
@@ -13,6 +13,24 @@ authorised copy of that repository can confirm correspondence; nobody can
 derive its contents from this value. Publishing it fixes *which* private state
 produced this record, so that a later claim of "that is not what we ran" is
 checkable by anyone with access.
+
+## Revisions
+
+This note is published and revised in place. Every revision is listed here with
+the private commit that produced it, so an earlier published state stays
+identifiable and remains retrievable from this repository's own git history.
+A revision is a new version, not a silent edit.
+
+| date | private commit | change |
+|---|---|---|
+| 2026-09-01 | `2a7c8fbb68e18246f7b99a39e17e703e6b1e1952` | §2 only: added Barone & Lillo (2026), arXiv:2606.15715, an unrefereed preprint, as prior-work context. Cited for execution cost and market impact on Hyperliquid, explicitly not for any predictive claim. Reference list 9 → 10 entries. Audit entry A10 records the verification trail. |
+| 2026-08-29 | `2e80b6b46872759a6e17799cd1bb56033098bd52` | Initial publication. |
+
+**No part of the pre-registration changed in any revision above.** Both ratified
+digests below are unchanged, and no predeclared decision rule, outcome state,
+threshold or feature definition was edited. A revision to the note's prior-work
+section is not an amendment to the evaluation contract and must not be read as
+one; amendments have their own versioned document and their own hash.
 
 ## Contract digests
 

@@ -355,3 +355,75 @@ that order flow *predicts* price. It does not; it explains price
 contemporaneously. Had §2 been drafted from recollection, that sentence would
 have been wrong in exactly the way the rest of the note documents, plausible,
 citable, and backwards.
+
+
+---
+
+## A10 - Barone & Lillo (2026) added to §2 as prior-work context
+
+**Added 2026-09-01, after publication.** A new version of a live note, not a
+silent edit. The version pin is in the public record's `PROVENANCE.md`; the
+reason is below.
+
+### What was added, and what was deliberately not claimed
+
+One paragraph in §2 and one reference. Barone, D., & Lillo, F. (2026),
+"Trading in the Sunshine or in the Shade: Market Impact and Adverse Selection
+on Hyperliquid", arXiv:2606.15715.
+
+It is the nearest thing in the literature to this project's setting: the same
+venue, the same address-level visibility, hidden metaorder activity
+reconstructed per address. That closeness is exactly why it is bounded
+explicitly. **They study what a trade costs to execute. This note asks whether
+a move can be seen coming.** Different questions, and the citation is not
+evidence for the second in either direction.
+
+Nothing outside §2 was touched. The evaluation contract is unchanged and still
+hashes to `937ce309...`; no predeclared decision rule, outcome state or
+threshold was edited.
+
+### Verification trail
+
+Same standard as A9: verified from the source, not from search summaries.
+
+| check | result |
+|---|---|
+| arXiv record | 2606.15715, submitted 14 June 2026, v1, q-fin.TR |
+| title | matches verbatim |
+| authors | Davide Barone, Fabrizio Lillo (Scuola Normale Superiore, Pisa) |
+| journal DOI | **none** - arXiv DataCite DOI only, `10.48550/arXiv.2606.15715` |
+| Crossref | one match: SSRN `10.2139/ssrn.6944480`, type `posted-content`, subtype `preprint`, no container-title |
+| body | full HTML text fetched and searched, not the abstract |
+| quotations | every quoted string located verbatim in the body |
+
+Labelled *Preprint; not peer reviewed*, consistent with the other two.
+
+### The correction the standard caught
+
+An automated summary of the paper reported it as "entirely retrospective - no
+out-of-sample forecasting occurs." **That is false**, and citing it would have
+put a checkably wrong sentence in §2.
+
+The paper does contain an out-of-sample exercise: a discrete-time arrival
+exercise on five-minute bins, and a horse race reported as AUC. Reading the
+body showed what those predict - metaorder and TWAP *arrivals*, and which
+execution mode a trader chooses - not future price. So the claim in the note is
+the narrower true one: where they predict, the target is order arrival rather
+than price, and in the authors' own words the paper "should therefore not be
+read as showing that the book strongly predicts individual TWAP arrivals".
+
+This is the second time in this section a citation nearly entered on the
+strength of a summary rather than the body. The first was Kyle (A9), in the
+opposite direction: dropped because a tool returned nothing, restored once the
+scan was rendered and read. Both failures have the same root - **the tool's
+report of a paper is not the paper.**
+
+### The guard
+
+`build.py` now asserts that the prose introducing Barone & Lillo still carries
+the sentence bounding it to execution rather than forecasting. Verified by
+negative control: with that sentence altered, the check fails.
+
+A citation this close to the project's own question is the one most likely to
+be quietly promoted into support by a later edit. The bound is therefore
+enforced mechanically, not trusted.

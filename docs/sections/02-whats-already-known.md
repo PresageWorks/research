@@ -58,6 +58,21 @@ liquidation cascades and reports that "No variable is event-invariant," using
 Binance data rather than an on-chain venue. I found no verified study testing
 these quantities where wallet identity is directly observable.
 
+Work on Hyperliquid itself does exist, on a different question. Barone and
+Lillo (2026), an unrefereed preprint, reconstruct hidden metaorder activity at
+address level — "sequences of consecutive same-sign market trades from the same
+address on the same pair" — across all 201 perpetual markets from July 2025 to
+March 2026, and measure the execution-cost and liquidity effects of the venue's
+protocol-native TWAP orders, whose parent instruction "becomes publicly visible
+as soon as the corresponding on-chain transaction is submitted". What they
+measure is execution: temporary and permanent market impact, and adverse
+selection. Where they do predict, the target is order arrival rather than
+price, and they are explicit that the paper "should therefore not be read as
+showing that the book strongly predicts individual TWAP arrivals". So the same
+venue and the same address-level visibility have been used to study what a
+trade costs to execute. That is not the forecasting question this note asks,
+and nothing in their result bears on it either way.
+
 One caution frames all of it. Gould et al. (2013), surveying the limit order
 book literature, note that "different studies often present conflicting
 conclusions," attributing this to differences in matching algorithms, asset
@@ -77,6 +92,10 @@ is in `AUDIT.md` (A9).
   *Journal of Financial Markets*, 17, 53–64. doi:10.1016/j.finmar.2013.08.002
   — summarising Andersen & Bondarenko (2014), VPIN and the flash crash,
   *Journal of Financial Markets*, 17, 1–46. doi:10.1016/j.finmar.2013.05.005
+- Barone, D., & Lillo, F. (2026). Trading in the sunshine or in the shade:
+  Market impact and adverse selection on Hyperliquid. arXiv:2606.15715.
+  *Preprint; not peer reviewed.* — cited for prior work on execution and
+  market impact, not for any predictive claim.
 - Cont, R., Kukanov, A., & Stoikov, S. (2014). The price impact of order book
   events. *Journal of Financial Econometrics*, 12(1), 47–88.
   doi:10.1093/jjfinec/nbt003
